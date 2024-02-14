@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -15,10 +18,19 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String","server_url",getApiKey("server_url"))
+        buildConfigField("String","weather_api_key",getApiKey("weather_api_key"))
     }
 
     viewBinding {
         enable = true
+    }
+    dataBinding {
+        enable = true
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -39,6 +51,10 @@ android {
     }
 }
 
+fun getApiKey(propertyKey:String) : String {
+    return  gradleLocalProperties(rootDir).getProperty(propertyKey)
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -48,4 +64,21 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    // api
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0") // JSON 변환
+    implementation("com.squareup.okhttp3:okhttp:4.10.0") // OkHttp 라이브러리
+    implementation("com.squareup.okhttp3:logging-interceptor:3.11.0")
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:4.9.0")
+    // 위치
+    implementation("com.google.android.gms:play-services-location:19.0.1")
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.14.2")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
+    //photopicker
+    // Java language implementation
+    implementation("androidx.activity:activity:1.6.0")
+    // Kotlin
+    implementation("androidx.activity:activity-ktx:1.6.0")
 }
