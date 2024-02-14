@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_bottom_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/bottom_navigation_home"
+        android:title="홈"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_bottom_farm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/bottom_navigation_farm"
+        android:title="나의 밭"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item_bottom_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/bottom_navigation_feed"
+        android:title="커뮤니티"
+        app:showAsAction="always" />
+</menu>
