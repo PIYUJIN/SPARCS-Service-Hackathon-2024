@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.LoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewPasswordTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="63dp"
+            android:fontFamily="@font/pretendard_semi_bold"
+            android:text="닉네임과 비밀번호를 작성해주세요."
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/row_background"
+            android:ems="10"
+            android:fontFamily="@font/pretendard_medium"
+            android:hint="닉네임"
+            android:inputType="text"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="10dp"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/row_background"
+            android:ems="10"
+            android:fontFamily="@font/pretendard_medium"
+            android:hint="비밀번호"
+            android:inputType="text|textPassword"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="10dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textViewWrongUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="로그인 정보가 맞지 않습니다."
+            android:textColor="#FFFF5454"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/pretendard_medium"
+        android:textColor="@color/main_color"
+        android:text="처음이라면? 회원가입하기"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/onboarding_button_color"
+        android:fontFamily="@font/pretendard_medium"
+        android:text="로그인하기"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

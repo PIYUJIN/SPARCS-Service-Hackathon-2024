@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
+    android:orientation="vertical"
+    android:paddingHorizontal="18dp"
+    tools:context=".ui.RegisterNickNameFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewNickNameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="63dp"
+            android:fontFamily="@font/pretendard_semi_bold"
+            android:text="반가워요!\n당신을 뭐라고 부르면 될까요?"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/row_background"
+            android:ems="10"
+            android:fontFamily="@font/pretendard_medium"
+            android:hint="닉네임 입력하기"
+            android:inputType="text"
+            android:paddingHorizontal="17dp"
+            android:paddingVertical="10dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textViewSameNickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="중복 닉네임이에요! 다른 닉네임을 생각해주세요!"
+            android:textColor="#FFFF5454"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/onboarding_button_color"
+        android:fontFamily="@font/pretendard_medium"
+        android:text="다음으로"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
