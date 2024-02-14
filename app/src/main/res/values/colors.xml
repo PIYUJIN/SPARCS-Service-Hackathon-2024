@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#7FBA76</color>
     <color name="background_color">#EAFEE9</color>
+    <color name="screen_background_color">#F6F6F6</color>
     <color name="icon_tint">#333333</color>
+    <color name="onboarding_button_color">#CC7FBA76</color>
+    <color name="transparent">#00000000</color>
 </resources>
