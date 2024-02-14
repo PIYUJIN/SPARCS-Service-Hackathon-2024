@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
     android:background="@drawable/row_background"
     android:orientation="vertical"
     android:paddingHorizontal="24dp"
@@ -11,9 +12,12 @@
         android:id="@+id/textViewTodo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:fontFamily="@font/pretendard_semi_bold"
+        android:text="TextView"
+        android:textSize="22sp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTodoPlantInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -22,5 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:text="TextView" />
+        android:fontFamily="@font/pretendard_regular"
+        android:text="TextView"
+        android:textColor="@color/main_color"
+        android:textSize="12sp" />
 </LinearLayout>
