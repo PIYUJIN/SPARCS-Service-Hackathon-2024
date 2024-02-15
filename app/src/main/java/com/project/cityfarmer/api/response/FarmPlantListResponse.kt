@@ -7,6 +7,7 @@ data class FarmPlantListResponse(
     @SerializedName("farm_image")
     val farmImage: String,
     val plants: List<Plant>,
+    val username: String?,
 )
 
 data class Plant(
