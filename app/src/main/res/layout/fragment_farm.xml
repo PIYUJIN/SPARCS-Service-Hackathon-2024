@@ -66,8 +66,7 @@
             android:id="@+id/imageViewFarm"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
-            android:src="@drawable/ic_alert" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewMyPlant"
