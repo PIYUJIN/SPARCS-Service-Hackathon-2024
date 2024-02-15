@@ -34,7 +34,9 @@ class MainActivity : AppCompatActivity() {
         val FEED_FRAGMENT = "FeedFragment"
         val PLANT_DETAIL_FRAGMENT = "PlantDetailFragment"
         val FARM_PICTURE_EDIT_FRAGMENT = "FarmPictureEditFragment"
-        val PLANT_REGISTER_WEB_VIEW_FRAGMENT = "PlantRegisterWebViewFragment"
+        val PLANT_LOG_DETAIL_FRAGMENT = "PlantLogDetailFragment"
+        val FARM_DETAIL_FRAGMENT = "FarmDetailFragment"
+        val TAGGED_DETAIL_FRAGMNET = "TaggedDetailFragment"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                     when(it.itemId) {
                         R.id.item_bottom_home -> {
                             replaceFragment(HOME_FRAGMENT, true, null)
-//                            replaceFragment(PLANT_REGISTER_WEB_VIEW_FRAGMENT, true, null)
                         }
                         R.id.item_bottom_farm -> {
                             replaceFragment(FARM_FRAGMENT, true, null)
@@ -99,8 +100,14 @@ class MainActivity : AppCompatActivity() {
             FARM_PICTURE_EDIT_FRAGMENT -> {
                 FarmPictureEditFragment()
             }
-            PLANT_REGISTER_WEB_VIEW_FRAGMENT -> {
-                PlantRegisterWebViewFragment()
+            PLANT_LOG_DETAIL_FRAGMENT -> {
+                PlantLogDetailFragment()
+            }
+            FARM_DETAIL_FRAGMENT -> {
+                FarmDetailFragment()
+            }
+            TAGGED_DETAIL_FRAGMNET -> {
+                TaggedDetailFragment()
             }
             else -> {
                 Fragment()

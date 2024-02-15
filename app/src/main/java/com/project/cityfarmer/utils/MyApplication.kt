@@ -8,5 +8,12 @@ class MyApplication : Application() {
         var signUpNickName = ""
         var signUpPassword = ""
         var loginNickName = ""
+
+        var feedTagType = "전체"
+        var feedTagPlace = "전체"
+        var feedTagPlant = "전체"
+
+        var feedId = 0
+        var feedUserId = 0
     }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="feed_type_array">
+        <item>게시글 종류</item> <!--hint-->
+        <item>농업일지</item>
+        <item>밭자랑</item>
+    </array>
+
+    <array name="feed_place_array">
+        <item>장소</item> <!--hint-->
+        <item>베란다</item>
+        <item>옥상</item>
+    </array>
+
+    <array name="feed_plant_array">
+        <item>작물</item> <!--hint-->
+        <item>상추</item>
+        <item>케일</item>
+        <item>방울토마토</item>
+        <item>깻잎</item>
+        <item>고추</item>
+        <item>파</item>
+        <item>애플민트</item>
+        <item>콩</item>
+    </array>
+</resources>
