@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
     android:orientation="vertical"
-    tools:context=".FarmFragment" >
     android:paddingHorizontal="18dp"
+    tools:context=".ui.FarmFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabPicture"
@@ -61,16 +62,19 @@
             android:text="나의 밭"
             android:textSize="30sp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewFarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
             android:src="@drawable/ic_alert" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMyPlant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"/>
 
     </LinearLayout>
 

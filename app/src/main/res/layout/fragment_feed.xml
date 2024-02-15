@@ -3,12 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/screen_background_color"
     android:orientation="vertical"
-    tools:context=".FeedFragment" >
+    tools:context=".ui.FeedFragment">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="feed fragment" />
+        android:fontFamily="@font/pretendard_medium"
+        android:text="우리지역 도시농부"
+        android:textSize="30sp" />
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/row_background"
+        android:iconifiedByDefault="false"
+        android:searchIcon="@drawable/search_green" />
 </LinearLayout>
