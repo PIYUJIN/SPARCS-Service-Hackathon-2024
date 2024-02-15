@@ -13,8 +13,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
-        android:src="@drawable/ic_alert" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                 android:paddingVertical="4dp"
                 android:text="물 줌"
                 android:textColor="#FF3C82D3"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -91,7 +90,7 @@
                 android:paddingVertical="4dp"
                 android:text="분갈이 함"
                 android:textColor="#FFFFB23E"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

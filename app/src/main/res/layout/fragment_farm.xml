@@ -58,6 +58,7 @@
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="나의 밭"
             android:textSize="30sp" />
@@ -66,6 +67,9 @@
             android:id="@+id/imageViewFarm"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="19dp"
+            android:src="@drawable/img_basic_farm"
+            android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -73,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 

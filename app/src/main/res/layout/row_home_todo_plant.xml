@@ -17,8 +17,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
-            android:src="@drawable/ic_alert" />
+            android:src="@drawable/ic_alert"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
 
         <LinearLayout
             android:layout_width="match_parent"
