@@ -3,6 +3,10 @@
     <style name="Base.Theme.CityFarmer" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>   <!-- 상태바 아이콘(true: 검정 / false: 흰색) -->
+        <item name="colorPrimary">@color/main_color</item>
     </style>
 
     <style name="Theme.CityFarmer" parent="Base.Theme.CityFarmer" />
