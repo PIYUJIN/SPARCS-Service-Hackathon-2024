@@ -49,10 +49,12 @@ class FeedFragment : Fragment() {
 
             spinnerTag1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    fragmentFeedBinding.spinnerTag1.setBackgroundResource(R.drawable.feed_spinner_background)
                     when(position) {
                         0 -> {
                             MyApplication.feedTagType = "전체"
                             selectTag()
+                            fragmentFeedBinding.spinnerTag1.setBackgroundResource(R.drawable.row_background)
                         }
                         1 -> {
                             MyApplication.feedTagType = resources.getStringArray(R.array.feed_type_array).get(1)
@@ -72,10 +74,12 @@ class FeedFragment : Fragment() {
 
             spinnerTag2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    fragmentFeedBinding.spinnerTag2.setBackgroundResource(R.drawable.feed_spinner_background)
                     when(position) {
                         0 -> {
                             MyApplication.feedTagPlace = "전체"
                             selectTag()
+                            fragmentFeedBinding.spinnerTag2.setBackgroundResource(R.drawable.row_background)
                         }
 
                         1 -> {
@@ -99,10 +103,12 @@ class FeedFragment : Fragment() {
 
             spinnerTag3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    fragmentFeedBinding.spinnerTag3.setBackgroundResource(R.drawable.feed_spinner_background)
                     when(position) {
                         0 -> {
                             MyApplication.feedTagPlant = "전체"
                             selectTag()
+                            fragmentFeedBinding.spinnerTag3.setBackgroundResource(R.drawable.row_background)
                         }
                         1 -> {
                             MyApplication.feedTagPlant = resources.getStringArray(R.array.feed_plant_array).get(1)
