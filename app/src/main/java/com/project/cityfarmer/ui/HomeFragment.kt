@@ -46,6 +46,7 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         getHomeTodo()
+        mainActivity.hideBottomNavigation(false)
     }
 
     fun getHomeTodo() {

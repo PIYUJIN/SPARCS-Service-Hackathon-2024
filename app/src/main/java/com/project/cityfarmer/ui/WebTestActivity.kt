@@ -36,9 +36,7 @@ class WebTestActivity : AppCompatActivity() {
             try {
                 uploadMessage?.onReceiveValue(arrayOf(it))
                 uploadMessage = null
-                Toast.makeText(this, "업로드 성공", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
-                Toast.makeText(this, "업로드 실패", Toast.LENGTH_SHORT).show()
                 e.printStackTrace()
             }
         }

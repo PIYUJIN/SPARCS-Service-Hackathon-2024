@@ -64,13 +64,13 @@ class FarmFragment : Fragment() {
                 val mainIntent = Intent(mainActivity, WebTestActivity::class.java)
                 startActivity(mainIntent)
 //                mainActivity.replaceFragment(MainActivity.PLANT_REGISTER_WEB_VIEW_FRAGMENT, true, null)
-                Toast.makeText(requireContext(), "카메라 버튼 클릭!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "카메라 버튼 클릭!", Toast.LENGTH_SHORT).show()
             }
 
             // 플로팅 버튼 클릭 이벤트 - 사진변경
             fabPicture.setOnClickListener {
                 mainActivity.replaceFragment(MainActivity.FARM_PICTURE_EDIT_FRAGMENT, true, null)
-                Toast.makeText(requireContext(), "사진변경 버튼 클릭!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "사진변경 버튼 클릭!", Toast.LENGTH_SHORT).show()
             }
         }
         return fragmentFarmBinding.root
@@ -79,6 +79,7 @@ class FarmFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         getFarmPlantList()
+        mainActivity.hideBottomNavigation(false)
     }
 
 
@@ -86,7 +87,6 @@ class FarmFragment : Fragment() {
      *  플로팅 액션 버튼 클릭시 동작하는 애니메이션 효과 세팅
      */
     fun toggleFab() {
-        Toast.makeText(requireContext(), "메인 플로팅 버튼 클릭 : $isFabOpen", Toast.LENGTH_SHORT).show()
 
         // 플로팅 액션 버튼 닫기 - 열려있는 플로팅 버튼 집어넣는 애니메이션 세팅
         if (isFabOpen) {
@@ -125,9 +125,9 @@ class FarmFragment : Fragment() {
                         var result: FarmPlantListResponse? = response.body()
                         Log.d("##", "onResponse 성공: " + result?.toString())
 
-                        Glide.with(requireContext())
-                            .load(result?.farmImage)
-                            .into(fragmentFarmBinding.imageViewFarm)
+//                        Glide.with(requireContext())
+//                            .load(result?.farmImage)
+//                            .into(fragmentFarmBinding.imageViewFarm)
 
                         fragmentFarmBinding.run {
                             recyclerViewMyPlant.run {
