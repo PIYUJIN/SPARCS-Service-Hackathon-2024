@@ -1,6 +1,7 @@
 package com.project.cityfarmer.ui
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -60,6 +61,9 @@ class FarmFragment : Fragment() {
 
             // 플로팅 버튼 클릭 이벤트 - 작물 추가
             fabAdd.setOnClickListener {
+                val mainIntent = Intent(mainActivity, WebTestActivity::class.java)
+                startActivity(mainIntent)
+//                mainActivity.replaceFragment(MainActivity.PLANT_REGISTER_WEB_VIEW_FRAGMENT, true, null)
                 Toast.makeText(requireContext(), "카메라 버튼 클릭!", Toast.LENGTH_SHORT).show()
             }
 

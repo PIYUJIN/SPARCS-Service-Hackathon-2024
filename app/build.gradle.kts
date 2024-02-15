@@ -78,7 +78,9 @@ dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
     //photopicker
     // Java language implementation
-    implementation("androidx.activity:activity:1.6.0")
+    implementation("androidx.activity:activity:1.7.0")
     // Kotlin
-    implementation("androidx.activity:activity-ktx:1.6.0")
+    implementation("androidx.activity:activity-ktx:1.7.0")
+
+    implementation("io.github.ParkSangGwon:tedpermission-normal:3.3.0")
 }
