@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.project.cityfarmer.BuildConfig
 import com.project.cityfarmer.api.response.FarmPlantListResponse
 import com.project.cityfarmer.api.response.HomeListResponse
 import com.project.cityfarmer.databinding.RowFarmBinding
 import com.project.cityfarmer.databinding.RowHomeTodoBinding
 import com.project.cityfarmer.ui.MainActivity
+import com.project.cityfarmer.utils.MyApplication
 import java.util.Date
 import java.util.concurrent.TimeUnit
 
@@ -26,6 +28,12 @@ class FarmPlantAdapter (var result: FarmPlantListResponse, var mainActivity: Mai
         onItemClickListener = listener
     }
 
+    interface OnItemClickListener {
+        fun onItemClick(position: Int) {}
+    }
+
+    var itemClickListener: OnItemClickListener? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val binding =
@@ -35,7 +43,7 @@ class FarmPlantAdapter (var result: FarmPlantListResponse, var mainActivity: Mai
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(mainActivity).load(result.plants.get(position).mainImage).into(holder.plantImage)
+        Glide.with(mainActivity).load("${BuildConfig.server_url}${result.plants.get(position).mainImage}").into(holder.plantImage)
         holder.plantName.text = result.plants.get(position).nickname
         holder.plantType.text = result.plants.get(position).plantTypeName
         var tagWateringDate = "오늘 물 줌"
@@ -67,9 +75,9 @@ class FarmPlantAdapter (var result: FarmPlantListResponse, var mainActivity: Mai
         val plantImage = binding.imageViewFarmPlant
 
         init {
-            binding.root.setOnClickListener {
-                mainActivity.replaceFragment(MainActivity.PLANT_DETAIL_FRAGMENT, true, null)
-                true
+            itemView.setOnClickListener {
+                MyApplication.plantId = result.plants.get(adapterPosition).id.toInt()
+                itemClickListener?.onItemClick(adapterPosition)
             }
         }
     }

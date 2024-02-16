@@ -38,6 +38,8 @@ class HomeFragment : Fragment() {
 
         fragmentHomeBinding.run {
             textViewHomeNickName.text = MyApplication.loginNickName
+
+//            val listAdapter = HomeTodoAdapter() // 어댑터
         }
 
         return fragmentHomeBinding.root
@@ -62,9 +64,19 @@ class HomeFragment : Fragment() {
                     Log.d("##", "onResponse 성공: " + result?.toString())
 
                     fragmentHomeBinding.run {
+                        var listAdapter = HomeTodoAdapter(result!!, mainActivity)
                         recyclerViewHomeTodo.run {
-                            adapter = HomeTodoAdapter(result!!, mainActivity)
+                            adapter = listAdapter
                             layoutManager = LinearLayoutManager(context)
+
+                            listAdapter.itemClickListener =
+                                object : HomeTodoAdapter.OnItemClickListener {
+                                    override fun onItemClick(position: Int) {
+                                        val mainIntent =
+                                            Intent(mainActivity, PlantDetailActivity::class.java)
+                                        startActivity(mainIntent)
+                                    }
+                                }
                         }
                     }
 

@@ -1,6 +1,7 @@
 package com.project.cityfarmer.ui.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +27,8 @@ import com.project.cityfarmer.databinding.RowHomeTodoBinding
 import com.project.cityfarmer.databinding.RowHomeTodoPlantBinding
 import com.project.cityfarmer.ui.MainActivity
 import com.project.cityfarmer.ui.OnboardingActivity
+import com.project.cityfarmer.ui.PlantDetailActivity
+import com.project.cityfarmer.ui.WebTestActivity
 import com.project.cityfarmer.utils.MyApplication
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,6 +46,12 @@ class HomeTodoAdapter(var result: HomeListResponse, var mainActivity: MainActivi
     fun setOnItemClickListener(listener: (Int) -> Unit) {
         onItemClickListener = listener
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int) {}
+    }
+
+    var itemClickListener: OnItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         context = parent.context
@@ -80,13 +90,6 @@ class HomeTodoAdapter(var result: HomeListResponse, var mainActivity: MainActivi
         val todo = binding.textViewTodo
         val recyclerView = binding.recyclerViewTodoPlantInfo
         val layout = binding.layoutTodo
-
-        init {
-            binding.root.setOnClickListener {
-                mainActivity.replaceFragment(MainActivity.PLANT_DETAIL_FRAGMENT, true, null)
-                true
-            }
-        }
     }
 
     inner class RecyclerViewAdapter(var todoPosition: Int) :
@@ -107,9 +110,16 @@ class HomeTodoAdapter(var result: HomeListResponse, var mainActivity: MainActivi
                 rowPlantType = rowBinding.textViewPlantType
                 rowChecked = rowBinding.imageViewCheckBox
 
-                rowBinding.root.setOnClickListener {
-                    mainActivity.replaceFragment(MainActivity.PLANT_DETAIL_FRAGMENT, true, null)
+                itemView.setOnClickListener {
+                    MyApplication.plantId = result.data.get(todoPosition).tasks.get(adapterPosition).plant.id
+                    itemClickListener?.onItemClick(adapterPosition)
                 }
+
+//                rowBinding.root.setOnClickListener {
+//                    MyApplication.plantId = result.data.get(todoPosition).tasks.get(adapterPosition).id
+//                    val mainIntent = Intent(mainActivity, PlantDetailActivity::class.java)
+//                    startActivity(mainIntent)
+//                }
 
                 rowBinding.imageViewCheckBox.setOnClickListener {
                     if (result.data.get(todoPosition).type == "watering" || result.data.get(todoPosition).type == "repotting") {

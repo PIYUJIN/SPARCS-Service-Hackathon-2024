@@ -15,5 +15,7 @@ class MyApplication : Application() {
 
         var feedId = 0
         var feedUserId = 0
+
+        var plantId = 0
     }
 }

@@ -130,9 +130,19 @@ class FarmFragment : Fragment() {
 //                            .into(fragmentFarmBinding.imageViewFarm)
 
                         fragmentFarmBinding.run {
+                            var listAdapter = FarmPlantAdapter(result!!, mainActivity)
                             recyclerViewMyPlant.run {
-                                adapter = FarmPlantAdapter(result!!, mainActivity)
+                                adapter = listAdapter
                                 layoutManager = LinearLayoutManager(context)
+
+                                listAdapter.itemClickListener =
+                                    object : FarmPlantAdapter.OnItemClickListener {
+                                        override fun onItemClick(position: Int) {
+                                            val mainIntent =
+                                                Intent(mainActivity, PlantDetailActivity::class.java)
+                                            startActivity(mainIntent)
+                                        }
+                                    }
                             }
                         }
 
