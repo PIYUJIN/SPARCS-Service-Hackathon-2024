@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.project.cityfarmer.BuildConfig
 import com.project.cityfarmer.R
 import com.project.cityfarmer.api.ApiClient
 import com.project.cityfarmer.api.TokenManager
@@ -64,7 +65,7 @@ class FarmDetailFragment : Fragment() {
                         Log.d("##", "onResponse 성공: " + result?.toString())
 
                         Glide.with(requireContext())
-                            .load(result?.farmImage)
+                            .load("${BuildConfig.server_url}${result?.farmImage}")
                             .into(fragmentFarmDetailBinding.imageViewFarm)
 
                         fragmentFarmDetailBinding.run {
