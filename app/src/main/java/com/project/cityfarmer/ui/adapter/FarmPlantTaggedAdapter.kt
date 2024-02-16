@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.project.cityfarmer.BuildConfig
 import com.project.cityfarmer.api.response.FarmPlantListResponse
 import com.project.cityfarmer.api.response.FarmPlantTaggedListResponse
 import com.project.cityfarmer.databinding.RowFarmBinding
@@ -33,7 +34,7 @@ class FarmPlantTaggedAdapter (var result: FarmPlantTaggedListResponse, var mainA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(mainActivity).load(result.data.get(position).mainImage).into(holder.plantImage)
+        Glide.with(mainActivity).load("${BuildConfig.server_url}${result.data.get(position).mainImage}").into(holder.plantImage)
         holder.plantName.text = result.data.get(position).nickname
         holder.plantType.text = result.data.get(position).plantTypeName
         var tagWateringDate = "오늘 물 줌"
@@ -68,7 +69,7 @@ class FarmPlantTaggedAdapter (var result: FarmPlantTaggedListResponse, var mainA
 
         init {
             binding.root.setOnClickListener {
-                mainActivity.replaceFragment(MainActivity.PLANT_DETAIL_FRAGMENT, true, null)
+//                mainActivity.replaceFragment(MainActivity.PLANT_DETAIL_FRAGMENT, true, null)
                 true
             }
         }

@@ -29,9 +29,6 @@
             android:name=".ui.PlantDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.FarmPictureEditActivity"
-            android:exported="true"></activity>
-        <activity
             android:name=".ui.WebTestActivity"
             android:exported="false" />
         <activity

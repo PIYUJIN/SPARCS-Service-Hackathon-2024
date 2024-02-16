@@ -101,7 +101,7 @@ class WebTestActivity : AppCompatActivity() {
                     Toast.makeText(this@WebTestActivity, "권한이 없습니다.", Toast.LENGTH_SHORT).show()
                 }
             })
-            .setDeniedMessage("이 권한이 없으면 이력서를 업로드할 수 없습니다.")
+            .setDeniedMessage("이 권한이 이력서를 업로드할 수 없습니다.")
             .setPermissions(
                 Manifest.permission.INTERNET
             ).check()

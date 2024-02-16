@@ -2,6 +2,7 @@ package com.project.cityfarmer.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +11,19 @@ import android.view.ViewGroup
 import com.project.cityfarmer.R
 import com.project.cityfarmer.api.ApiClient
 import com.project.cityfarmer.api.TokenManager
+import com.project.cityfarmer.api.request.ChangeFarmImageRequest
 import com.project.cityfarmer.api.request.LoginRequest
+import com.project.cityfarmer.api.response.ChangeFarmImageResponse
 import com.project.cityfarmer.api.response.LoginResponse
 import com.project.cityfarmer.databinding.FragmentLoginBinding
 import com.project.cityfarmer.utils.MyApplication
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 
 class LoginFragment : Fragment() {
 

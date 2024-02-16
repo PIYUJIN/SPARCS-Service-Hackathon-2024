@@ -18,12 +18,14 @@ import com.project.cityfarmer.api.response.HomeListResponse
 import com.project.cityfarmer.api.response.LikeFeedResponse
 import com.project.cityfarmer.api.response.LoginResponse
 import com.project.cityfarmer.api.response.SignUpResponse
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -67,11 +69,19 @@ interface ApiService {
     ): Call<FarmPlantListResponse>
 
     // 나의 밭 사진 변경
-    @GET("/farm/image")
+    @POST("/farm/image")
     fun changeFarmImage(
         @Header("Authorization") token: String,
         @Body parameters: ChangeFarmImageRequest
     ): Call<ChangeFarmImageResponse>
+
+    // 나의 밭 사진 변경
+//    @POST("/farm/image")
+//    fun changeFarmImage(
+//        @Header("Authorization") token: String,
+//        @Part image : MultipartBody.Part,
+//    ): Call<ChangeFarmImageResponse>
+
 
     // 피드 목록
     @GET("/diary")

@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.project.cityfarmer.BuildConfig
 import com.project.cityfarmer.api.response.FeedListResponse
 import com.project.cityfarmer.databinding.RowFarmBinding
 import com.project.cityfarmer.databinding.RowFeedBinding
@@ -41,7 +42,11 @@ class FeedListAdapter (var result: FeedListResponse, var mainActivity: MainActiv
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(mainActivity).load(result.data.get(position).image).into(holder.image)
+        if(result.data.get(position).image == "") {
+            holder.image.visibility = View.GONE
+        } else {
+            Glide.with(mainActivity).load("${BuildConfig.server_url}${result.data.get(position).image}").into(holder.image)
+        }
         holder.type.text = result.data.get(position).type
         holder.title.text = result.data.get(position).title
         holder.content.text = result.data.get(position).description

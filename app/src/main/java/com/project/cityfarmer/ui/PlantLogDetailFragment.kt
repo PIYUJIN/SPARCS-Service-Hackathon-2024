@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.project.cityfarmer.BuildConfig
 import com.project.cityfarmer.R
 import com.project.cityfarmer.api.ApiClient
 import com.project.cityfarmer.api.TokenManager
@@ -91,11 +92,25 @@ class PlantLogDetailFragment : Fragment() {
                         textViewFeedTitle.text = result?.title
                         textViewFeedContent.text = result?.description
                         if(result?.type == "농업일지") {
-                            Glide.with(requireContext()).load(result?.image).into(imageViewFeed)
-                            imageViewFeedDetailFarm.visibility = View.GONE
+                            if(result?.image == "") {
+                                imageViewFeed.visibility = View.GONE
+                                imageViewFeedDetailFarm.visibility = View.GONE
+                            } else {
+                                Glide.with(requireContext())
+                                    .load("${BuildConfig.server_url}${result?.image}")
+                                    .into(imageViewFeed)
+                                imageViewFeedDetailFarm.visibility = View.GONE
+                            }
                         } else {
-                            Glide.with(requireContext()).load(result?.image).into(imageViewFeedDetailFarm)
-                            imageViewFeed.visibility = View.GONE
+                            if(result?.image == "") {
+                                imageViewFeedDetailFarm.visibility = View.GONE
+                                imageViewFeed.visibility = View.GONE
+                            } else {
+                                Glide.with(requireContext())
+                                    .load("${BuildConfig.server_url}${result?.image}")
+                                    .into(imageViewFeedDetailFarm)
+                                imageViewFeed.visibility = View.GONE
+                            }
                         }
                         textViewFeedUserName.text = result?.username
                         textViewPlantCount.text = "키우는 작물 ${result?.myFarmItemCount}개(밭자랑 보기)"

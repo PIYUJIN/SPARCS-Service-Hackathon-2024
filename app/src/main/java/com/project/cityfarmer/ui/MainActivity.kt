@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     // 확인할 권한 목록
     val permissionList = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.ACCESS_MEDIA_LOCATION,
         Manifest.permission.INTERNET
     )
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         val HOME_FRAGMENT = "HomeFragment"
         val FARM_FRAGMENT = "FarmFragment"
         val FEED_FRAGMENT = "FeedFragment"
-        val PLANT_DETAIL_FRAGMENT = "PlantDetailFragment"
         val FARM_PICTURE_EDIT_FRAGMENT = "FarmPictureEditFragment"
         val PLANT_LOG_DETAIL_FRAGMENT = "PlantLogDetailFragment"
         val FARM_DETAIL_FRAGMENT = "FarmDetailFragment"
@@ -94,12 +94,9 @@ class MainActivity : AppCompatActivity() {
             FEED_FRAGMENT -> {
                 FeedFragment()
             }
-            PLANT_DETAIL_FRAGMENT -> {
-                PlantDetailFragment()
-            }
-            FARM_PICTURE_EDIT_FRAGMENT -> {
-                FarmPictureEditFragment()
-            }
+//            FARM_PICTURE_EDIT_FRAGMENT -> {
+//                FarmPictureEditFragment()
+//            }
             PLANT_LOG_DETAIL_FRAGMENT -> {
                 PlantLogDetailFragment()
             }
